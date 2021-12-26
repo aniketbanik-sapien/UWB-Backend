@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-login</title>
+    <link rel="stylesheet" href="admin-login-style.css">
+</head>
+<body>
+    <div class="outerbox">
+        <form action="admin-login-validate.php" class="flex-column" autocomplete="off" method="post">
+            <i class="fas fa-user-circle posit-yn"></i>
+            <div class='posit-yn' id="ttl">Admin login</div> 
+            <div class="input_box flex-column invisible">
+                <div id="box1">
+                    <input type="text" name="aname" id="username" required>
+                    <div class="underline" id="underline1"></div>
+                    <label>Username</label>
+                </div>
+                <div id="box1">
+                    <input type="password" name="apw" id="password" required>
+                    <div class="underline" id="underline2"></div>
+                    <label>Password</label>
+                </div>
+            </div>
+            <button type="submit" name="login" class="login_btn posit-yp">LOGIN</button>
+            <a href="#" class="posit-yp">Reset password?</a>
+        </form>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/7c7b8993a0.js" crossorigin="anonymous"></script>
+<script>
+            let form = document.querySelector('form');
+            let icon = document.querySelector('i');
+            let ttl = document.getElementById('ttl');
+            let btn = document.getElementsByClassName('login_btn');
+            let input_box = document.getElementsByClassName('input_box');
+            let outerbox = document.getElementsByClassName('outerbox');
+            let reset = document.querySelector('a');
+
+
+            btn[0].addEventListener('click', ()=>{
+                icon.classList.add('shrink');
+                input_box[0].classList.remove('invisible');
+                input_box[0].style.display = 'flex';
+                setTimeout(() => {
+                    input_box[0].style.opacity = '1';
+                }, 1000);
+                icon.classList.remove('posit-yn');
+                ttl.classList.remove('posit-yn');
+                btn[0].classList.remove('posit-yp');
+                reset.classList.remove('posit-yp');
+                outerbox[0].style.padding = '1.5em'
+            }); 
+</script>
+<script>
+    let hght = 0;
+    setInterval(function() {
+        hght = window.innerHeight;
+        (document.getElementsByTagName('body')[0]).style.height = hght+'px';
+    }, 10);
+</script>
+</html>
