@@ -41,6 +41,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>view blog</title>
 </head>
+ // asdiasjd
 <body>
     <form action="" method='post'>
     <p><?php echo $username ?></p><br>
